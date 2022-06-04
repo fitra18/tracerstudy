@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 10:35 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Jun 04, 2022 at 01:04 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,11 +66,23 @@ INSERT INTO `alumni` (`idmhs`, `nama`, `nim`, `ttl`, `jk`, `alamat`, `tahunmasuk
 --
 
 CREATE TABLE `loker` (
-  `idloker` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `perusahaan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `id_loker` int(11) NOT NULL,
+  `nama_perusahaan` varchar(50) NOT NULL,
+  `bidang_usaha` varchar(50) NOT NULL,
+  `job_title` varchar(50) NOT NULL,
+  `deskripsi` mediumtext DEFAULT NULL,
+  `tgl_berakhir` date DEFAULT NULL,
+  `tgl_upload` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `gambar` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `loker`
+--
+
+INSERT INTO `loker` (`id_loker`, `nama_perusahaan`, `bidang_usaha`, `job_title`, `deskripsi`, `tgl_berakhir`, `tgl_upload`, `gambar`) VALUES
+(7, 'Perusahaan b', 'Tambang A', 'Helper', 'asdasd', '2022-06-11', '2022-06-04 10:55:54', 'tes11.png'),
+(8, 'Perusahaan 2', 'Tambang A', 'Helper', 'asd', '2022-06-23', '2022-06-04 10:55:54', 'tes12.png');
 
 -- --------------------------------------------------------
 
@@ -202,7 +214,7 @@ INSERT INTO `user` (`iduser`, `username`, `pass`, `idmhs`, `role`, `active`) VAL
 -- Indexes for table `loker`
 --
 ALTER TABLE `loker`
-  ADD PRIMARY KEY (`idloker`);
+  ADD PRIMARY KEY (`id_loker`);
 
 --
 -- Indexes for table `tbk1`
@@ -237,6 +249,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `loker`
+--
+ALTER TABLE `loker`
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbk1`

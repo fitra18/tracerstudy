@@ -36,7 +36,7 @@
                                     <form role="form" action="<?= base_url('dashboard') ?>">
                                         <label>Username</label>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="email-addon">
+                                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="text-addon">
                                         </div>
                                         <label>Password</label>
                                         <div class="mb-3">

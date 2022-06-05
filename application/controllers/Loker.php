@@ -10,6 +10,7 @@ class Loker extends CI_Controller {
 
 	public function index()
 	{
+		cek_login();
 		$data = [
 			'title' => 'Lowongan Pekerjaan',
 			'loker' => $this->M_loker->get_all_data()

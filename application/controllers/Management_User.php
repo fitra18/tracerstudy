@@ -10,6 +10,7 @@ class Management_User extends CI_Controller {
 
 	public function index()
 	{
+		cek_login();
 		$data = [
 			'title' => 'Management User',
 			'user' => $this->M_user->get()

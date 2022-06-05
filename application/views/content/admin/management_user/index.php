@@ -41,7 +41,7 @@
                                         <td><?= $u->nama; ?></td>
                                         <td><?= $u->nama; ?></td>
                                         <td>
-                                            <?php if ($u->active == 1) { ?>
+                                            <?php if ($u->active == '1') { ?>
                                                 <span class="badge badge-sm bg-gradient-success">Active</span>
                                             <?php } else { ?>
                                                 <span class="badge badge-sm bg-gradient-secondary">Not Active</span>

@@ -33,17 +33,24 @@
                                     <div class="card-header pb-0 text-left bg-transparent">
                                         <h3 class="font-weight-bolder text-info text-gradient">Sign In</h3>
                                     </div>
-                                    <form role="form" action="<?= base_url('dashboard') ?>">
+                                        <?php 
+                                        if ($this->session->flashdata('pesan')) {
+                                            echo '<div class="alert alert-success" role="alert">';
+                                            echo $this->session->flashdata('pesan');
+                                            echo '</div>';  
+                                        }
+                                        ?>
+                                    <form role="form" action="<?= base_url('login/proses_login'); ?>" method="post">
                                         <label>Username</label>
                                         <div class="mb-3">
-                                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="text-addon">
+                                            <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="email-addon" required>
                                         </div>
                                         <label>Password</label>
                                         <div class="mb-3">
-                                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                            <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" required>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                            <button class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
                                         </div>
                                     </form>
                                 </div>
@@ -69,6 +76,13 @@
         </div>
     </footer>
     <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 3000);
+    </script>
     <!--   Core JS Files   -->
     <script src="<?= base_url() ?>assets/js/core/popper.min.js"></script>
     <script src="<?= base_url() ?>assets/js/core/bootstrap.min.js"></script>
@@ -87,6 +101,8 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= base_url() ?>assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
+
+    
 </body>
 
 </html>

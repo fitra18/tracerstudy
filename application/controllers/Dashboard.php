@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+		cek_login();
 		$data = [
 			'title' 		=> 'Dashboard',
 			'total_loker'	=>	$this->M_admin->total_loker(),

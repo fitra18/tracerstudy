@@ -6,11 +6,12 @@ class Loker extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_loker');
+		cek_login();
+		check_admin();
 	}
 
 	public function index()
 	{
-		cek_login();
 		$data = [
 			'title' => 'Lowongan Pekerjaan',
 			'loker' => $this->M_loker->get_all_data()

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="<?= base_url() ?>/assets/img/logo.png">
     <title>
         Traceher Study STIMIK | Sign In
     </title>
@@ -19,6 +19,9 @@
     <link href="<?= base_url() ?>assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="<?= base_url() ?>assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+
+    <!-- CDN Js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body class="">
@@ -26,20 +29,26 @@
         <section>
             <div class="page-header min-vh-75">
                 <div class="container">
-                    <div class="row text-center">
+                <div class="row text-center mt-5">
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain">
-                                <div class="card-body bg-gradient-primary mt-6" style="border-radius: 10px;">
-                                    <div class="card-header pb-0 text-left bg-transparent">
-                                        <h3 class="font-weight-bolder text-info text-gradient">Sign In</h3>
-                                    </div>
-                                        <?php 
+                <?php 
                                         if ($this->session->flashdata('pesan')) {
-                                            echo '<div class="alert alert-success" role="alert">';
+                                            echo '<div class="alert alert-success alogin" role="alert">';
                                             echo $this->session->flashdata('pesan');
                                             echo '</div>';  
                                         }
                                         ?>
+                </div>
+                </div>
+                </div>
+                    <div class="row text-center">
+                        <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                            <div class="card card-plain">
+                                <div class="card-body bg-gradient-primary" style="border-radius: 10px;">
+                                    <div class="card-header pb-0 text-left bg-transparent">
+                                        <h3 class="font-weight-bolder text-info text-gradient">Sign In</h3>
+                                    </div>
                                     <form role="form" action="<?= base_url('login/proses_login'); ?>" method="post">
                                         <label>Username</label>
                                         <div class="mb-3">
@@ -51,6 +60,9 @@
                                         </div>
                                         <div class="text-center">
                                             <button class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                        </div>
+                                        <div class="text-center">
+                                            <a href="<?= base_url('') ?>" class="btn bg-gradient-info w-100 mt-4 mb-0">Back To Dashboard</a>
                                         </div>
                                     </form>
                                 </div>
@@ -78,7 +90,7 @@
     <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
     <script>
         window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(".alogin").fadeTo(500, 0).slideUp(500, function() {
                 $(this).remove();
             });
         }, 3000);

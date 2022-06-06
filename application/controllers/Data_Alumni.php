@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_Alumni extends CI_Controller {
+
+	public function __construct() {
+		parent::__construct();
+		cek_login();
+		check_admin();
+	}
+
 	public function index()
 	{
 		cek_login();

@@ -11,3 +11,21 @@ function cek_login()
         redirect('login');
     }
 }
+
+function check_admin()
+{
+    $ci = get_instance();
+    if (!$ci->session->userdata('username')) {
+        redirect('login');
+    } else {
+        $role = $ci->session->userdata('role');
+
+        $userAccess = $ci->db->get_where('user', [
+            'role' => $role
+        ]);
+
+        if ($userAccess->num_rows() == 1) {
+            redirect('login/blocked');
+        }
+    }
+}

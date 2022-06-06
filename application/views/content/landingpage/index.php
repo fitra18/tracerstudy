@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="<?= base_url() ?>/assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="<?= base_url() ?>/assets/img/logo.png">
     <title>
         Tracer Study STMIK ADHI GUNA Palu
     </title>
@@ -178,7 +178,7 @@
                                             <h5 class="font-weight-bolder">Lowongan Pekerjaan</h5>
                                             <p>Anda dapat melihat Lowongan Pekerjaan yang telah membuka pendaftaran pada Halaman ini.</p>
                                             <h5 class="font-weight-bolder mb-4">Jumlah Loker =
-                                                <span class="text-danger text-sm font-weight-bolder">53 Loker</span>
+                                                <span class="text-success text-sm font-weight-bolder"><?= $total_loker ?> Loker</span>
                                             </h5>
                                             <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#info">
                                                 Read More

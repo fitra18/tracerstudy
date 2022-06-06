@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 10:35 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Jun 05, 2022 at 06:02 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,11 +66,22 @@ INSERT INTO `alumni` (`idmhs`, `nama`, `nim`, `ttl`, `jk`, `alamat`, `tahunmasuk
 --
 
 CREATE TABLE `loker` (
-  `idloker` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `perusahaan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `id_loker` int(11) NOT NULL,
+  `nama_perusahaan` varchar(50) NOT NULL,
+  `bidang_usaha` varchar(50) NOT NULL,
+  `job_title` varchar(50) NOT NULL,
+  `deskripsi` mediumtext DEFAULT NULL,
+  `tgl_berakhir` date DEFAULT NULL,
+  `tgl_upload` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `gambar` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `loker`
+--
+
+INSERT INTO `loker` (`id_loker`, `nama_perusahaan`, `bidang_usaha`, `job_title`, `deskripsi`, `tgl_berakhir`, `tgl_upload`, `gambar`) VALUES
+(7, 'Perusahaan b', 'Tambang A', 'Helper', 'asdasds2', '2022-06-11', '2022-06-05 16:02:29', 'tes11.png');
 
 -- --------------------------------------------------------
 
@@ -178,9 +189,9 @@ CREATE TABLE `tbk4` (
 --
 
 CREATE TABLE `user` (
-  `iduser` int(5) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `pass` varchar(20) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `username` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
   `idmhs` int(5) NOT NULL,
   `role` int(1) NOT NULL,
   `active` int(1) NOT NULL
@@ -190,9 +201,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`iduser`, `username`, `pass`, `idmhs`, `role`, `active`) VALUES
-(1, 'agri', 'admin', 1, 1, 1),
-(2, 'Noval', 'admin', 2, 1, 2);
+INSERT INTO `user` (`id_user`, `username`, `password`, `idmhs`, `role`, `active`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, 1),
+(2, 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 2, 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -202,7 +213,7 @@ INSERT INTO `user` (`iduser`, `username`, `pass`, `idmhs`, `role`, `active`) VAL
 -- Indexes for table `loker`
 --
 ALTER TABLE `loker`
-  ADD PRIMARY KEY (`idloker`);
+  ADD PRIMARY KEY (`id_loker`);
 
 --
 -- Indexes for table `tbk1`
@@ -232,11 +243,17 @@ ALTER TABLE `tbk4`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`iduser`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `loker`
+--
+ALTER TABLE `loker`
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbk1`
@@ -266,7 +283,7 @@ ALTER TABLE `tbk4`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

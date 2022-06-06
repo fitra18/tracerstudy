@@ -2,14 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_Alumni extends CI_Controller {
-
+  
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_alumni');
 	}
-
+  
 	public function index()
 	{
+		cek_login();
 		$data = [
 			'title' => 'Data Alumni',
 			'alumni' => $this->M_alumni->get()

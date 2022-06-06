@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="<?= base_url() ?>/assets/img/logo.png">
   <title>
     Tracer Study | <?= $title; ?>
   </title>
@@ -19,6 +19,12 @@
   <link href="<?= base_url() ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url() ?>/assets/css/soft-ui-dash.css?v=1.0.5" rel="stylesheet" />
+
+  <style>
+    .text-align-right{
+      text-align: right;
+    }
+  </style>
 
   <!-- css datatables -->
   <!-- <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" /> -->

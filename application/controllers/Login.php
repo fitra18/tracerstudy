@@ -17,7 +17,7 @@ class Login extends CI_Controller
 	public function proses_login()
 	{
 		$username   = $this->input->post('username');
-		$password   = md5($this->input->post('password'));
+		$password   = $this->input->post('password');
 
         $cekuser    = $this->M_login->cekuser($username);
         if ($cekuser) {
@@ -31,12 +31,13 @@ class Login extends CI_Controller
 
                     $this->session->set_userdata('username', $row->username);
                     $this->session->set_userdata('role', $row->role);
+                    redirect('dashboard');
 
-                    if ($this->session->userdata('role') == 1){
-                        redirect('dashboard');
-                    }else{
-                        redirect('data_alumni');
-                    }
+                    // if ($this->session->userdata('role') == 1){
+                    //     redirect('dashboard');
+                    // }else{
+                    //     redirect('dashboard');
+                    // }
                     
                 }else{
                     $this->session->set_flashdata('pesan', 'Maaf User Anda Belum Aktif');
@@ -61,4 +62,9 @@ class Login extends CI_Controller
         $this->session->set_flashdata('pesan', 'Anda Berhasil Logout !!!');
         redirect('login');
 	}
+
+    public function blocked()
+    {
+        $this->load->view('content/login/blocked');
+    }
 }

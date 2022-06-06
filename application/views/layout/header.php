@@ -20,6 +20,12 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url() ?>/assets/css/soft-ui-dash.css?v=1.0.5" rel="stylesheet" />
 
+  <style>
+    .text-align-right{
+      text-align: right;
+    }
+  </style>
+
   <!-- css datatables -->
   <!-- <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" /> -->
   <!-- JS Datatables -->

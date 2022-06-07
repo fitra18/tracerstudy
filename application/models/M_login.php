@@ -17,7 +17,7 @@ class M_login extends CI_Model
 
 	function ceklogin($username, $password)
 	{
-		$query = $this->db->query("SELECT * FROM user WHERE username = '$username' and password = '$password' ");
+		$query = $this->db->query("SELECT * FROM user WHERE username = '$username' and pass = '$password' ");
 
 		if ($query->num_rows() == 1) {
 			return $query->result();

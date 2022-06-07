@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 06:02 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jun 07, 2022 at 09:00 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,6 +41,7 @@ CREATE TABLE `alumni` (
   `email` varchar(100) NOT NULL,
   `ipk` int(11) NOT NULL,
   `judul` varchar(100) NOT NULL,
+  `stbiodata` int(5) NOT NULL,
   `idks1` int(5) NOT NULL,
   `stks1` int(5) NOT NULL,
   `idks2` int(5) NOT NULL,
@@ -55,9 +56,8 @@ CREATE TABLE `alumni` (
 -- Dumping data for table `alumni`
 --
 
-INSERT INTO `alumni` (`idmhs`, `nama`, `nim`, `ttl`, `jk`, `alamat`, `tahunmasuk`, `tahunlulus`, `prodi`, `nohp`, `email`, `ipk`, `judul`, `idks1`, `stks1`, `idks2`, `stks2`, `idks3`, `stks3`, `idks4`, `stks4`) VALUES
-(1, 'Agriady', 'F55116066', 'Palopo, 1998', 1, 'Tondo', 2016, '2020', 'Teknik Informatika', '080808', 'agriadhy@gmail.com', 4, 'Klasifikasi Citra Daging Ayam Berformalin menggunakan Algoritma SVM', 0, 0, 0, 0, 0, 0, 0, 0),
-(2, 'Noval', 'F55117001', 'Palu, 1998', 1, 'Pengawu', 2017, '2021', 'Teknik Informatika', '080808', 'muhnoval@gmail.com', 4, 'Sistem Informasi Management Keuangan BI', 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `alumni` (`idmhs`, `nama`, `nim`, `ttl`, `jk`, `alamat`, `tahunmasuk`, `tahunlulus`, `prodi`, `nohp`, `email`, `ipk`, `judul`, `stbiodata`, `idks1`, `stks1`, `idks2`, `stks2`, `idks3`, `stks3`, `idks4`, `stks4`) VALUES
+(1, 'Muh Noval', '5520117110', 'Palu, 03 oktober 1998', 1, 'Jl. Padanjakaya', 2017, '2022', 'Teknik Informatika', '082271069166', 'muhammadnoval1998@gmail.com', 4, 'Augmented Reality', 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `loker` (
 --
 
 INSERT INTO `loker` (`id_loker`, `nama_perusahaan`, `bidang_usaha`, `job_title`, `deskripsi`, `tgl_berakhir`, `tgl_upload`, `gambar`) VALUES
-(7, 'Perusahaan b', 'Tambang A', 'Helper', 'asdasds2', '2022-06-11', '2022-06-05 16:02:29', 'tes11.png');
+(12, 'MNPROJECT', 'Medsos', 'Admin Medsos', 'Pandai dalam menggunakan media sosial', '2022-06-07', '2022-06-07 06:23:56', 'yas.png');
 
 -- --------------------------------------------------------
 
@@ -102,6 +102,13 @@ CREATE TABLE `tbk1` (
   `k1h` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbk1`
+--
+
+INSERT INTO `tbk1` (`idks1`, `idmhs`, `k1a`, `k1b`, `k1c`, `k1d`, `k1e`, `k1f`, `k1g`, `k1h`) VALUES
+(1, 1, '2 bulan', 'Beasiswa ADIK', 'sbsbs', 'Erat', 'Tingkat Yang Sama', 'sdnskas', 'saassa', 'asaa');
+
 -- --------------------------------------------------------
 
 --
@@ -119,6 +126,13 @@ CREATE TABLE `tbk2` (
   `k2f` varchar(128) NOT NULL,
   `k2g` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbk2`
+--
+
+INSERT INTO `tbk2` (`idks2`, `idmhs`, `k2a`, `k2b`, `k2c`, `k2d`, `k2e`, `k2f`, `k2g`) VALUES
+(1, 1, 'Cukup Besar', 'Sangat Besar', 'Sangat Besar', 'Sangat Besar', 'Sangat Besar', 'Kurang', 'Sangat Besar');
 
 -- --------------------------------------------------------
 
@@ -141,6 +155,13 @@ CREATE TABLE `tbk3` (
   `k3j` varchar(128) NOT NULL,
   `k3k` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbk3`
+--
+
+INSERT INTO `tbk3` (`idks3`, `idmhs`, `k3a`, `k3b`, `k3c`, `k3d`, `k3e`, `k3f`, `k3g`, `k3h`, `k3i`, `k3j`, `k3k`) VALUES
+(1, 1, 'asdaksjd', 'asdsad', 'Melalui iklan di koran / majalah / brosur,Melamar ke Perusahaan tanpa mengetahui lowongan yang ada,Pergi ke Bursa / Pameran kerj', 'dadas', 'asdas', 'sadas', 'Saya masih belajar / melanjutkan kuliah profesi atau pascasarjana,Saya Menikah,Saya sibuk dengan keluarga dan anak-anak,', 'Ya, saya akan mulai bekerja dalam 2 minggu ke depan', 'Organisasi Non-Profit/ Lembaga Swadaya Masyarakat', 'Melalui iklan di koran / majalah / brosur,Melamar ke Perusahaan tanpa mengetahui lowongan yang ada,Pergi ke Bursa / Pameran kerj', '');
 
 -- --------------------------------------------------------
 
@@ -182,6 +203,13 @@ CREATE TABLE `tbk4` (
   `k4cc` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbk4`
+--
+
+INSERT INTO `tbk4` (`idks4`, `idmhs`, `k4a`, `k4b`, `k4c`, `k4d`, `k4e`, `k4f`, `k4g`, `k4h`, `k4i`, `k4j`, `k4k`, `k4l`, `k4m`, `k4n`, `k4o`, `k4p`, `k4q`, `k4r`, `k4s`, `k4t`, `k4u`, `k4v`, `k4w`, `k4x`, `k4y`, `k4z`, `k4aa`, `k4bb`, `k4cc`) VALUES
+(1, 1, 'Rendah', 'Sangat Rendah', 'Rendah', 'Sangat Tinggi', 'Rendah', 'Sangat Rendah', 'Sangat Rendah', 'Rendah', 'Cukup', 'Tinggi', 'Sangat Rendah', 'Rendah', 'Rendah', 'Sangat Rendah', 'Rendah', 'Sangat Rendah', 'Tinggi', 'Sangat Rendah', 'Sangat Rendah', 'Rendah', 'Cukup', 'Sangat Rendah', 'Rendah', 'Sangat Tinggi', 'Cukup', 'Cukup', 'Sangat Rendah', 'Rendah', 'Tinggi');
+
 -- --------------------------------------------------------
 
 --
@@ -189,9 +217,10 @@ CREATE TABLE `tbk4` (
 --
 
 CREATE TABLE `user` (
-  `id_user` int(5) NOT NULL,
+  `iduser` int(5) NOT NULL,
+  `nama` varchar(50) NOT NULL,
   `username` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL,
+  `pass` varchar(250) NOT NULL,
   `idmhs` int(5) NOT NULL,
   `role` int(1) NOT NULL,
   `active` int(1) NOT NULL
@@ -201,13 +230,19 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `idmhs`, `role`, `active`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, 1),
-(2, 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 2, 2, 1);
+INSERT INTO `user` (`iduser`, `nama`, `username`, `pass`, `idmhs`, `role`, `active`) VALUES
+(1, 'Agrhi', 'admin', 'admin', 0, 1, 1),
+(2, 'Muh Noval', 'noval', '12345', 1, 0, 1);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `alumni`
+--
+ALTER TABLE `alumni`
+  ADD PRIMARY KEY (`idmhs`);
 
 --
 -- Indexes for table `loker`
@@ -243,47 +278,53 @@ ALTER TABLE `tbk4`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`iduser`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `alumni`
+--
+ALTER TABLE `alumni`
+  MODIFY `idmhs` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `loker`
 --
 ALTER TABLE `loker`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbk1`
 --
 ALTER TABLE `tbk1`
-  MODIFY `idks1` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idks1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbk2`
 --
 ALTER TABLE `tbk2`
-  MODIFY `idks2` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idks2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbk3`
 --
 ALTER TABLE `tbk3`
-  MODIFY `idks3` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idks3` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbk4`
 --
 ALTER TABLE `tbk4`
-  MODIFY `idks4` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idks4` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

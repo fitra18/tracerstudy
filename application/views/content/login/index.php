@@ -21,7 +21,7 @@
     <link id="pagestyle" href="<?= base_url() ?>assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
 
     <!-- CDN Js -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body class="">
@@ -29,19 +29,19 @@
         <section>
             <div class="page-header min-vh-75">
                 <div class="container">
-                <div class="row text-center mt-5">
+                    <div class="row text-center mt-5">
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain">
-                <?php 
-                                        if ($this->session->flashdata('pesan')) {
-                                            echo '<div class="alert alert-success alogin" role="alert">';
-                                            echo $this->session->flashdata('pesan');
-                                            echo '</div>';  
-                                        }
-                                        ?>
-                </div>
-                </div>
-                </div>
+                                <?php
+                                if ($this->session->flashdata('pesan')) {
+                                    echo '<div class="alert alert-success alogin" role="alert">';
+                                    echo $this->session->flashdata('pesan');
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row text-center">
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain">
@@ -114,7 +114,7 @@
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= base_url() ?>assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
 
-    
+
 </body>
 
 </html>

@@ -17,9 +17,4 @@ class Home extends CI_Controller {
 		];
 		$this->load->view('content/landingpage/index', $data);
 	}
-
-	// public function index()
-	// {
-	// 	$this->load->view('content/landingpage/index');
-	// }
 }

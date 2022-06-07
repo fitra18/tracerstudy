@@ -7,7 +7,6 @@ class Loker extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_loker');
 		cek_login();
-		check_admin();
 	}
 
 	public function index()
@@ -22,14 +21,6 @@ class Loker extends CI_Controller {
 		$this->load->view('content/admin/loker/index', $data);
 		$this->load->view('layout/footer');
 	}
-
-	// public function detail()
-	// {
-	// 	$data = [
-	// 		'title' => 'Detail Lowongan Pekerjaan',
-	// 		'loker' => $this->M_loker->get_detail($id_loker)
-	// 	];	
-	// }
 
 	public function add()
 	{
@@ -59,8 +50,7 @@ class Loker extends CI_Controller {
 			'tgl_berakhir'		=> $tgl_berakhir,
 			'gambar'			=> $gambar,
 		);
-		$this->M_loker->add($data)
-		;
+		$this->M_loker->add($data);
 		$this->session->set_flashdata('pesan', 'Data Berhasil Di Tambahkan !!!');
 		redirect('loker');
 	}
@@ -127,6 +117,4 @@ class Loker extends CI_Controller {
 		$this->session->set_flashdata('pesan', 'Data Berhasil Di Hapus !!!');
 		redirect('loker');
 	}
-
-	//______________________________________________________________________________________________________
 }

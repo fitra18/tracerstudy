@@ -19,12 +19,8 @@ function check_admin()
         redirect('login');
     } else {
         $role = $ci->session->userdata('role');
-
-        $userAccess = $ci->db->get_where('user', [
-            'role' => $role
-        ]);
-
-        if ($userAccess->num_rows() == 0) {
+        
+        if ($role != 1) {
             redirect('login/blocked');
         }
     }

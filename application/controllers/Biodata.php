@@ -193,6 +193,7 @@ class Biodata extends CI_Controller {
 	
 		$this->db->where('idmhs', $idmhs);
 		$this->M_biodata->update('alumni', $data);
+		$this->session->unset_userdata('selesai');
 		$sts = $this->db->get_where('alumni', ['idmhs' => $idmhs])->row_array();
 		$this->session->set_userdata('selesai', $sts['stks4']);
 		redirect('Biodata');

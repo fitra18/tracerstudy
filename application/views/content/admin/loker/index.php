@@ -5,7 +5,7 @@
             <h6>Data Lowongan Pekerjaan</h6>
         </div>
         <?php if ($this->session->userdata('role') == 0) { ?>
-            <?php } else if ($this->session->userdata('role') == 1) { ?>
+        <?php } else if ($this->session->userdata('role') == 1) { ?>
             <div class="container">
                 <div class="row">
                     <div class="text-align-right">

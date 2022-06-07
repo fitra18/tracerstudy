@@ -22,14 +22,6 @@ class Loker extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	// public function detail()
-	// {
-	// 	$data = [
-	// 		'title' => 'Detail Lowongan Pekerjaan',
-	// 		'loker' => $this->M_loker->get_detail($id_loker)
-	// 	];
-	// }
-
 	public function add()
 	{
 		$nama_perusahaan 	= $this->input->post('nama_perusahaan');

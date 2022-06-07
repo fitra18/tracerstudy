@@ -1,10 +1,10 @@
 <h3 class="mb-2"> <?= $title ?></h3>
-<div class="col-12">
-    <div class="card mb-4">
-        <div class="card-header pb-0">
-            <h6>Data Lowongan Pekerjaan</h6>
-        </div>
-        <?php if ($this->session->userdata('role') == 0) { ?>
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0">
+                <h6>Data Lowongan Pekerjaan</h6>
+            </div>
+            <?php if ($this->session->userdata('role') == 0) { ?>
             <?php } else if ($this->session->userdata('role') == 1) { ?>
             <div class="container">
                 <div class="row">
@@ -131,68 +131,60 @@
 
     <!-- Modal Detail -->
     <?php foreach ($loker as $l) { ?>
-
-        <div class="modal fade" id="detail<?= $l->id_loker ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Detail Lowongan Pekerjaan</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <?php
-                        echo form_open_multipart('loker/detail/' . $l->id_loker);
-                        ?>
-
-                        <div class="form-group">
-                            <label>Nama Perusahaan</label>
-                            <input type="text" name="nama_perusahaan" value="<?= $l->nama_perusahaan ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Bidang Usaha</label>
-                            <input type="text" name="bidang_usaha" value="<?= $l->bidang_usaha ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Judul Lowongan</label>
-                            <input type="text" name="job_title" value="<?= $l->job_title ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Tanggal Berakhir Lowongan</label>
-                            <input type="text" name="tgl_berakhir" value="<?= $l->tgl_berakhir ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Tanggal Posting</label>
-                            <input type="text" name="tgl_upload" value="<?= $l->tgl_upload ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-floating">
-                            <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px" readonly><?= $l->deskripsi ?></textarea>
-                            <label for="floatingTextarea2">Deskripsi</label>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-sm-4 mt-3">
-                                <div class="form-group">
-                                    <img src="<?= base_url('assets/gambar/' . $l->gambar) ?>" id="gambar_load" width="200px">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                    <?php
-                    echo form_close();
-                    ?>
-                </div>
+      
+<div class="modal fade" id="detail<?= $l->id_loker ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Lowongan Pekerjaan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              
+                <?php 
+                echo form_open_multipart('loker/detail/' . $l->id_loker);
+                ?>  
+              
+                <div class="row">
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="<?= base_url('assets/gambar/'. $l->gambar) ?>" width="100%">
+                    </div>
+                    <div class="col-md-7">
+                        <table class="table">
+                            <tr>
+                                <td>Nama Perusahaan</td>
+                                <td><b><?= $l->nama_perusahaan ?></b></td>
+                            </tr>
+                            <tr>
+                                <td>Bidang Usaha</td>
+                                <td><b><?= $l->bidang_usaha ?></b></td>
+                            </tr>
+                            <tr>
+                                <td>Judul Lowongan</td>
+                                <td><b><?= $l->job_title ?></b></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Berakhir Lowongan</td>
+                                <td><b><?= $l->tgl_berakhir ?></b></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Upload</td>
+                                <td><b><?= $l->tgl_upload ?></b></td>
+                            </tr>
+                            <tr>
+                                <td>Deskripsi</td>
+                                <td><b><?= $l->deskripsi ?></b></td>
+                            </tr>
+                        </table>
+                      </div>
+                  </div>
+              </div>                      
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            <?php 
+            echo form_close();
+            ?>
         </div>
 
     <?php } ?>

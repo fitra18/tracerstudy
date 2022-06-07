@@ -9,21 +9,21 @@
                 <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modaladduser">Tambah Data</button>
             </div>
         </div>
-        <div class="card-body px-0 pt-0 pb-2">            
+        <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
                 <div class="container">
-                <?php if ($this->session->flashdata('pesan')) {
-                    echo '<div class="alert alert-success" role="alert">
+                    <?php if ($this->session->flashdata('pesan')) {
+                        echo '<div class="alert alert-success" role="alert">
                     Success ! ';
-                    echo $this->session->flashdata('pesan');
-                    echo '</div>';  
-                } ?>
-                <?php if ($this->session->flashdata('error')) {
-                    echo '<div class="alert alert-error" role="alert">
+                        echo $this->session->flashdata('pesan');
+                        echo '</div>';
+                    } ?>
+                    <?php if ($this->session->flashdata('error')) {
+                        echo '<div class="alert alert-error" role="alert">
                     Errort ! ';
-                    echo $this->session->flashdata('error');
-                    echo '</div>';  
-                } ?>
+                        echo $this->session->flashdata('error');
+                        echo '</div>';
+                    } ?>
                     <table id="user" class="table align-items-center mb-0">
                         <thead>
                             <tr>
@@ -105,7 +105,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Username</label>
-                                            <input type="text" class="form-control" name="id" id="edid" hidden>                                            
+                                            <input type="text" class="form-control" name="id" id="edid" hidden>
                                             <input type="text" class="form-control" name="username" id="edusername">
                                         </div>
                                     </div>
@@ -122,27 +122,6 @@
                                 </div>
                             </form>
                         </div>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $no = 1;
-                                foreach ($user as $u) {
-                                ?>
-                                    <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $u->nama; ?></td>
-                                        <td><?= $u->nama; ?></td>
-                                        <td>
-                                            <?php if ($u->active == '1') { ?>
-                                                <span class="badge badge-sm bg-gradient-success">Active</span>
-                                            <?php } else { ?>
-                                                <span class="badge badge-sm bg-gradient-secondary">Not Active</span>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -165,7 +144,7 @@
                         <span id="messagedelete"></span>
                         <form action="<?= base_url('Management_User') ?>/delete" method="POST">
                             <input type="text" class="form-control" name="idhapusmhs" id="idhapusmhs" hidden>
-                        
+
                     </div>
                     <div class="modal-footer">
                         <div class="text-align-right">
@@ -282,7 +261,7 @@
                 $('#edstatus').text('Active');
             } else if (status == 1) {
                 $('#edstatus').text('Non Active');
-            }            
+            }
         });
 
         $('.klikhapus').click(function() {

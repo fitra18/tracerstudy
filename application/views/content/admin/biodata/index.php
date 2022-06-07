@@ -8,13 +8,13 @@
                         <div class="numbers">
                             <h5 class="font-weight-bolder mb-0">
                                 Data Diri
-                                <?php if ($status['judul'] != '') : ?>
+                                <?php if ($status['stbiodata'] == 1) : ?>
                                     <span class="text-success text-sm font-weight-bolder">Selesai</span>
                                 <?php else : ?>
                                     <span class="text-danger text-sm font-weight-bolder">Belum di isi</span>
                                 <?php endif; ?>
                             </h5>
-                                <?php if ($status['email'] != '') : ?>
+                                <?php if ($status['stbiodata'] == 1 ) : ?>
                                     <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" data-bs-toggle="modal" data-bs-target="#modal_notification">
                                     lengkapi..
                                     <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
@@ -240,8 +240,12 @@
                       <input type="text" class="form-control" id="exampleFormControlInput1" name="ttl" placeholder="..." required>
                   </div>
                   <div class="form-group">
-                      <label for="exampleFormControlInput1">jk</label>
-                      <input type="tel" class="form-control" id="exampleFormControlInput1" name="jk" placeholder="..." required>
+                    <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="jk" id="jk" required>
+                        <option value="0" selected disabled>-- Pilih --</option>
+                        <option value="1">Laki-laki</option>
+                        <option value="2">Perempuan</option>
+                    </select>
                   </div>
                   <div class="form-group">
                       <label for="exampleFormControlInput1">Alamat</label>
@@ -253,7 +257,7 @@
                   </div>
                   <div class="form-group">
                       <label for="exampleFormControlInput1">Program Study</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" name="program_study" placeholder="Teknik Informatika" required>
+                      <input type="text" class="form-control" id="exampleFormControlInput1" name="program_study" placeholder="..." required>
                   </div>
                   <div class="form-group">
                       <label for="exampleFormControlInput1">Tahun Masuk</label>
@@ -269,7 +273,7 @@
                   </div>
                   <div class="form-group">
                       <label for="exampleFormControlInput1">Judul Skripsi</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" name="judul" placeholder="3,33" required>
+                      <input type="text" class="form-control" id="exampleFormControlInput1" name="judul" placeholder="..." required>
                   </div>
                   <div class="modal-footer">
                     <button type="submit" class="btn bg-gradient-primary">Save</button>

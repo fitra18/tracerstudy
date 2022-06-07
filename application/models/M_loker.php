@@ -40,6 +40,4 @@ class M_loker extends CI_Model
 		$this->db->where('id_loker', $data['id_loker']);
 		$this->db->delete('loker', $data);
 	}
-
-	//______________________________________________________________________________________________________
 }

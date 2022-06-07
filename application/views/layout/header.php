@@ -21,21 +21,18 @@
   <link id="pagestyle" href="<?= base_url() ?>/assets/css/soft-ui-dash.css?v=1.0.5" rel="stylesheet" />
 
   <style>
-    .text-align-right{
+    .text-align-right {
       text-align: right;
     }
   </style>
 
-  <!-- css datatables -->
-  <!-- <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" /> -->
-  <!-- JS Datatables -->
-  <!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> -->
-  
   <!-- CDN Js -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+  <!-- css datatables -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
+  <!-- JS Datatables -->
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 

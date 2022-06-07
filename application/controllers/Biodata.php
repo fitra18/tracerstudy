@@ -3,30 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Biodata extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
-
 	public function __construct()
     {
         parent::__construct();
         $this->load->model('M_biodata');
+		cek_login();		
     }
 
-	public function index($idmhs = 5)
+	public function index()
 	{
+		$idmhs = $_SESSION['idhmhs'];
 		$data = [
 			'title' => 'Biodata'
 		];
@@ -39,8 +25,8 @@ class Biodata extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	public function Data_diri($idmhs = 5) {
-
+	public function Data_diri() {
+		$idmhs = $_SESSION['idhmhs'];
 		$datadiri = [
 			'idmhs' => $idmhs,
 			// 'nim' => $this->input->post('nim', true),
@@ -54,15 +40,18 @@ class Biodata extends CI_Controller {
 			'nohp' => $this->input->post('noHp', true),
 			'email' => $this->input->post('email', true),
 			'ipk' => $this->input->post('ipk', true),
-			'judul' => $this->input->post('judul', true)
+			'judul' => $this->input->post('judul', true),
+			'stbiodata' => 1,
 		];
 
+		$this->db->where('idmhs', $idmhs);
 		$this->db->update('alumni', $datadiri);
 		redirect('Biodata');
 	}
 
-	public function Pertanyaan_umum($idmhs = 5) 
+	public function Pertanyaan_umum() 
 	{
+		$idmhs = $_SESSION['idhmhs'];
 		$dataPertanyaanUmum = [
 			'idmhs' => $idmhs,
 			'k1a' => $this->input->post('k1a', true),
@@ -82,13 +71,14 @@ class Biodata extends CI_Controller {
 				'stks1' => 1,
 				'idks1' => $tb_pu['idks1']
 			];
-
+		$this->db->where('idmhs', $idmhs);
 		$this->M_biodata->update('alumni', $data);
-		redirect('Biodata', $data);
+		redirect('Biodata');
 	}
 
-	public function Metode_pembelajaran($idmhs = 5) 
+	public function Metode_pembelajaran() 
 	{
+		$idmhs = $_SESSION['idhmhs'];
 		$dataPertanyaanUmum = [
 			'idmhs' => $idmhs,
 			'k2a' => $this->input->post('k2a', true),
@@ -107,14 +97,15 @@ class Biodata extends CI_Controller {
 				'stks2' => 1,
 				'idks2' => $tb_pu['idks2']
 			];
-
+		
+		$this->db->where('idmhs', $idmhs);
 		$this->M_biodata->update('alumni', $data);
 		redirect('Biodata');
 	}
 
-	public function Pekerjaan($idmhs = 5) 
+	public function Pekerjaan() 
 	{
-		
+		$idmhs = $_SESSION['idhmhs'];
 		$kc3 = '';
 		$kg3 = '';
 		$kj3 = '';
@@ -150,13 +141,15 @@ class Biodata extends CI_Controller {
 				'stks3' => 1,
 				'idks3' => $tb_pu['idks3']
 			];
-	
+
+		$this->db->where('idmhs', $idmhs);
 		$this->M_biodata->update('alumni', $data);
 		redirect('Biodata');
 	}
 
-	public function Kompetensi($idmhs = 5) 
+	public function Kompetensi() 
 	{
+		$idmhs = $_SESSION['idhmhs'];
 		$dataPertanyaanUmum = [
 			'idmhs' => $idmhs,
 			'k4a' => $this->input->post('k4a', true),
@@ -198,7 +191,10 @@ class Biodata extends CI_Controller {
 				'idks4' => $tb_pu['idks4']
 			];
 	
+		$this->db->where('idmhs', $idmhs);
 		$this->M_biodata->update('alumni', $data);
+		$sts = $this->db->get_where('alumni', ['idmhs' => $idmhs])->row_array();
+		$this->session->set_userdata('selesai', $sts['stks4']);
 		redirect('Biodata');
 	}
 }

@@ -31,6 +31,7 @@ class Login extends CI_Controller
 
                     $this->session->set_userdata('username', $row->username);
                     $this->session->set_userdata('role', $row->role);
+                    $this->session->set_userdata('idhmhs', $row->idmhs);
                     redirect('dashboard');
 
                     // if ($this->session->userdata('role') == 1){
@@ -58,6 +59,8 @@ class Login extends CI_Controller
 	{
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('role');
+        $this->session->unset_userdata('idmhs');
+        $this->session->unset_userdata('selesai');
         
         $this->session->set_flashdata('pesan', 'Anda Berhasil Logout !!!');
         redirect('login');

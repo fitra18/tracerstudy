@@ -24,7 +24,7 @@ function check_admin()
             'role' => $role
         ]);
 
-        if ($userAccess->num_rows() == 1) {
+        if ($userAccess->num_rows() == 0) {
             redirect('login/blocked');
         }
     }

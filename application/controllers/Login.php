@@ -32,6 +32,8 @@ class Login extends CI_Controller
                     $this->session->set_userdata('username', $row->username);
                     $this->session->set_userdata('role', $row->role);
                     $this->session->set_userdata('idhmhs', $row->idmhs);
+                    $sts = $this->db->get_where('alumni', ['idmhs' => $row->idmhs])->row_array();
+		            $this->session->set_userdata('selesai', $sts['stks4']);
                     redirect('dashboard');
 
                     // if ($this->session->userdata('role') == 1){

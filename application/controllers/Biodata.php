@@ -115,7 +115,7 @@ class Biodata extends CI_Controller {
 		foreach ($this->input->post('k3g') as $kg) {
 			$kg3 .= $kg.',';
 		};
-		foreach ($this->input->post('k3c') as $kj) {
+		foreach ($this->input->post('k3j') as $kj) {
 			$kj3 .= $kj.',';
 		};
 

@@ -19,6 +19,8 @@
   <link href="<?= base_url() ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url() ?>/assets/css/soft-ui-dash.css?v=1.0.5" rel="stylesheet" />
+  <!-- My CSS -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/mycss.css">
 
   <style>
     .text-align-right {

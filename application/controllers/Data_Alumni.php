@@ -14,13 +14,18 @@ class Data_Alumni extends CI_Controller {
 	{
 		$data = [
 			'title' => 'Data Alumni',
-			'alumni' => $this->M_alumni->get()
+			'alumni' => $this->M_alumni->get(),
 		];
-		// print_r($data['alumni']); die;
+
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('layout/navbar', $data);
-		$this->load->view('content/admin/dataAlumni/index');
+		$this->load->view('content/admin/dataAlumni/index', $data);
 		$this->load->view('layout/footer');
+	}
+	public function detail() {
+
+		$idmhs = $this->input->post('id_bdta');
+		echo json_encode($this->M_alumni->getAlumni($idmhs));
 	}
 }

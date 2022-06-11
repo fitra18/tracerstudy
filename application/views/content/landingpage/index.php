@@ -86,7 +86,7 @@
                                         <div class="numbers">
                                             <p class="text-sm mb-0 text-capitalize font-weight-bold">Jumlah Mahasiswa Melengkapi Data</p>
                                             <h5 class="font-weight-bolder mb-0">
-                                                100
+                                                <?= $total_sudah ?>
                                                 <span class="text-success text-sm font-weight-bolder">Mahasiswa</span>
                                             </h5>
                                         </div>
@@ -108,7 +108,7 @@
                                         <div class="numbers">
                                             <p class="text-sm mb-0 text-capitalize font-weight-bold">Jumlah Mahasiswa Belum Melengkapi</p>
                                             <h5 class="font-weight-bolder mb-0">
-                                                70
+                                                <?= $total_belum ?>
                                                 <span class="text-danger text-sm font-weight-bolder">Mahasiswa</span>
                                             </h5>
                                         </div>
@@ -233,7 +233,7 @@
                         <div class="py-3 text-center">
                             <i class="ni ni-bell-55 ni-3x"></i>
                             <h4 class="text-gradient text-danger mt-4">You should read this!</h4>
-                            <p>Untuk Mendapat Informasi mengenai Lowongan Pekerjaan Silakan Login di Website Tracer Study STMIK Adhi Guna Palu. Atau Bisa menekan Tombol "Masuk" diatas.<br>Jika Belum Memiliki akun silahkan Registrasi di admin Jurusan</p>
+                            <p>Untuk Mendapat Informasi mengenai Lowongan Pekerjaan Silakan Login di Website Tracer Study STMIK Adhi Guna Palu. Atau Bisa menekan Tombol "Masuk" diatas.<br>Jika Belum Memiliki akun silahkan Registrasi di Admin Jurusan</p>
                         </div>
                     </div>
                     <div class="modal-footer">

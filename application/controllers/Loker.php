@@ -6,6 +6,7 @@ class Loker extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_loker');
+		$this->load->helper('text');
 		cek_login();
 	}
 
@@ -36,12 +37,11 @@ class Loker extends CI_Controller {
 			
 			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('gambar')) {
-				echo "Upload Gagal"; die();
+				$this->session->set_flashdata('error', 'Data Tidak Tersimpan !!!'); redirect('loker'); die();
 			}else {
 				$gambar = $this->upload->data('file_name');
 			}
 		}
-
 		$data = array(
 			'nama_perusahaan'	=> $nama_perusahaan,
 			'bidang_usaha'		=> $bidang_usaha,

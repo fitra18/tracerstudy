@@ -16,7 +16,9 @@ class Dashboard extends CI_Controller {
 			'title' 		=> 'Dashboard',
 			'total_loker'	=>	$this->M_admin->total_loker(),
 			'total_alumni'	=>	$this->M_admin->total_alumni(),
-			'total_user'	=>	$this->M_admin->total_user()
+			'total_user'	=>	$this->M_admin->total_user(),
+			'total_sudah'	=>	$this->M_admin->total_data_sudah(),
+			'total_belum'	=>	$this->M_admin->total_data_belum()
 		];
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);

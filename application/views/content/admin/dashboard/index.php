@@ -7,8 +7,10 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Melengkapi Data</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    100
-                                    <span class="text-success text-sm font-weight-bolder">Mahasiswa</span>
+                                    <?= $total_sudah ?>
+                                    <a href="<?= base_url('data_alumni') ?>">
+                                        <span class="text-success text-sm font-weight-bolder">Mahasiswa</span>
+                                    </a>
                                 </h5>
                             </div>
                         </div>
@@ -30,7 +32,9 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Jumlah Alumni</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     <?= $total_alumni ?>
-                                    <span class="text-success text-sm font-weight-bolder">Lulusan</span>
+                                    <a href="<?= base_url('data_alumni') ?>">
+                                        <span class="text-success text-sm font-weight-bolder">Lulusan</span>
+                                    </a>
                                 </h5>
                             </div>
                         </div>
@@ -52,7 +56,9 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Loker Aktif</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     <?= $total_loker ?>
-                                    <span class="text-success text-sm font-weight-bolder">Lowongan Kerja</span>
+                                    <a href="<?= base_url('loker') ?>">
+                                        <span class="text-success text-sm font-weight-bolder">Lowongan Kerja</span>
+                                    </a>
                                 </h5>
                             </div>
                         </div>
@@ -74,7 +80,9 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Jumlah User Aktif</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     <?= $total_user ?>
-                                    <span class="text-success text-sm font-weight-bolder">User</span>
+                                    <a href="<?= base_url('management_user') ?>">
+                                        <span class="text-success text-sm font-weight-bolder">User</span>
+                                    </a>
                                 </h5>
                             </div>
                         </div>

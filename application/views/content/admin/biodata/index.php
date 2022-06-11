@@ -1012,12 +1012,3 @@
       </div>
     </div>
 <!-- === END MODAL KOMPETENSI LULUSAN === -->
-
-<!-- <script>
-    $(document).ready(function() {
-        $('#informasi').hide;
-        $('#infoPesan').click(function () {
-            $('.informasi').fadeToggle('slow');
-        });
-    });
-</script> -->

@@ -1,11 +1,11 @@
-<h3 class="mb-2"> Halaman Lowongan Kerja</h3>
-    <div class="col-12">
-        <div class="card mb-4">
-            <div class="card-header pb-0">
-                <h6>Data Lowongan Pekerjaan</h6>
-            </div>
-            <?php if ($this->session->userdata('role') == 0) { ?>
-            <?php } else if ($this->session->userdata('role') == 1) { ?>
+<h3 class="mb-2"> <?= $title ?></h3>
+<div class="col-12">
+    <div class="card mb-4">
+        <div class="card-header pb-0">
+            <h6>Data Lowongan Pekerjaan</h6>
+        </div>
+        <?php if ($this->session->userdata('role') == 0) { ?>
+        <?php } else if ($this->session->userdata('role') == 1) { ?>
             <div class="container">
                 <div class="row">
                     <div class="text-align-right">

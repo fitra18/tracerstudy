@@ -65,7 +65,7 @@ class Login extends CI_Controller
         $this->session->unset_userdata('selesai');
         
         $this->session->set_flashdata('pesan', 'Anda Berhasil Logout !!!');
-        redirect('login');
+        redirect('home');
 	}
 
     public function blocked()

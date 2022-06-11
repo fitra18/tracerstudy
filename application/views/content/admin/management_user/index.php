@@ -112,7 +112,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="pass" class="form-control" name="pass" id="edpass">
+                                            <input type="password" class="form-control" name="pass" id="edpass">
+                                        </div>
+                                        <div class="form">
+                                            <input type="checkbox" class="form-checkbox">
+                                            <label>Tampilkan password</label>
                                         </div>
                                     </div>
                                 </div>
@@ -231,6 +235,16 @@
     <!-- End Modal -->
 
     <script>
+        $(document).ready(function() {
+            $('.form-checkbox').click(function() {
+                if ($(this).is(':checked')) {
+                    $('#edpass').attr('type', 'text');
+                } else {
+                    $('#edpass').attr('type', 'password');
+                }
+            });
+        });
+
         $(document).ready(function() {
             $('#user').DataTable();
             $('#edit').hide();

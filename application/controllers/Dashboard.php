@@ -11,7 +11,6 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		cek_login();
 		$data = [
 			'title' 		=> 'Dashboard',
 			'total_loker'	=>	$this->M_admin->total_loker(),
@@ -20,6 +19,7 @@ class Dashboard extends CI_Controller {
 			'total_sudah'	=>	$this->M_admin->total_data_sudah(),
 			'total_belum'	=>	$this->M_admin->total_data_belum()
 		];
+		// print_r($data['total_sudah']); die;
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('layout/navbar', $data);

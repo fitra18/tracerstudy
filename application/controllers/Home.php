@@ -14,6 +14,8 @@ class Home extends CI_Controller {
 			'title' 		=> 'Home',
 			'total_loker'	=>	$this->M_admin->total_loker(),
 			'total_alumni'	=>	$this->M_admin->total_alumni(),
+			'total_sudah'	=>	$this->M_admin->total_data_sudah(),
+			'total_belum'	=>	$this->M_admin->total_data_belum()
 		];
 		$this->load->view('content/landingpage/index', $data);
 	}

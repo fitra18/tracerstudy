@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2022 at 09:00 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Jun 10, 2022 at 05:12 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,7 +57,9 @@ CREATE TABLE `alumni` (
 --
 
 INSERT INTO `alumni` (`idmhs`, `nama`, `nim`, `ttl`, `jk`, `alamat`, `tahunmasuk`, `tahunlulus`, `prodi`, `nohp`, `email`, `ipk`, `judul`, `stbiodata`, `idks1`, `stks1`, `idks2`, `stks2`, `idks3`, `stks3`, `idks4`, `stks4`) VALUES
-(1, 'Muh Noval', '5520117110', 'Palu, 03 oktober 1998', 1, 'Jl. Padanjakaya', 2017, '2022', 'Teknik Informatika', '082271069166', 'muhammadnoval1998@gmail.com', 4, 'Augmented Reality', 1, 1, 1, 1, 1, 1, 1, 1, 1);
+(1, 'Muh Noval', '5520117110', 'Palu, 03 oktober 1998', 1, 'Jl. Padanjakaya', 2017, '2022', 'Teknik Informatika', '082271069166', 'muhammadnoval1998@gmail.com', 4, 'Augmented Reality', 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(2, 'Muh Noval', '5520117110', 'Palu, 03 oktober 1998', 1, 'Jl. Padanjakaya', 2017, '2022', 'Teknik Informatika', '082271069166', 'muhammadnoval1998@gmail.com', 4, 'Augmented Reality', 1, 1, 0, 0, 0, 0, 0, 0, 0),
+(3, 'Fitra', '5720118014', '', 0, '', 0, '', '', '', '', 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -81,7 +83,8 @@ CREATE TABLE `loker` (
 --
 
 INSERT INTO `loker` (`id_loker`, `nama_perusahaan`, `bidang_usaha`, `job_title`, `deskripsi`, `tgl_berakhir`, `tgl_upload`, `gambar`) VALUES
-(12, 'MNPROJECT', 'Medsos', 'Admin Medsos', 'Pandai dalam menggunakan media sosial', '2022-06-07', '2022-06-07 06:23:56', 'yas.png');
+(1, 'PT Pamapersada Nusantara', 'Tambang', 'Kontraktor', 'Merencanakan, mengatur dan mengkoordinir kegiatan produksi pertambangan. Untuk informasi lebih lanjut bisa langsung mendaftar di situs PT Pamapersada Nusantara. https://recruitment.pamapersada.com/', '2022-06-17', '2022-06-10 15:09:59', 'PAMA-LOGO.jpg'),
+(2, 'PT Badak LNG', 'Liquefied Natural Gas', 'Cooperative Education Program Batch XXXIII', 'Syarat Pencaker :\r\n\r\n1. Laki-Laki / Perempuan\r\n2. Memiliki KTP Kota Bontang\r\n3. Sedang menempuh pendidikan S1 di Perguruan Tinggi\r\n4. Minimal Semester 6 atau belum Wisuda\r\n5. IPK sementara minimal 2,75\r\n6. Surat Bebas Narkoba, berbadan sehat & tidak buta warna (Setelah lolos TPA)\r\n7. Belum pernah mengikuti program COOP di Badak LNG', '2022-06-24', '2022-06-10 15:11:15', 'Badak_NGL.png');
 
 -- --------------------------------------------------------
 
@@ -232,7 +235,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `pass`, `idmhs`, `role`, `active`) VALUES
 (1, 'Agrhi', 'admin', 'admin', 0, 1, 1),
-(2, 'Muh Noval', 'noval', '12345', 1, 0, 1);
+(2, 'Muh Noval', 'noval', '12345', 1, 0, 1),
+(3, 'Fitra', 'fitra', 'fitra', 3, 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -288,13 +292,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `idmhs` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idmhs` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `loker`
 --
 ALTER TABLE `loker`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbk1`
@@ -324,7 +328,7 @@ ALTER TABLE `tbk4`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

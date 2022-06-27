@@ -1,9 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Loker extends CI_Controller {
+class Loker extends CI_Controller
+{
 
-	public function __construct() {
+	public function __construct()
+	{
 		parent::__construct();
 		$this->load->model('M_loker');
 		$this->load->helper('text');
@@ -31,14 +33,17 @@ class Loker extends CI_Controller {
 		$deskripsi 			= $this->input->post('deskripsi');
 		$tgl_berakhir 		= $this->input->post('tgl_berakhir');
 		$gambar				= $_FILES['gambar'];
-		if ($gambar=''){}else {
+		if ($gambar = '') {
+		} else {
 			$config['upload_path']		= './assets/gambar';
 			$config['allowed_types']	= 'jpg|png|gif|jpeg';
-			
+
 			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('gambar')) {
-				$this->session->set_flashdata('error', 'Data Tidak Tersimpan !!!'); redirect('loker'); die();
-			}else {
+				$this->session->set_flashdata('error', 'Data Tidak Tersimpan !!!');
+				redirect('loker');
+				die();
+			} else {
 				$gambar = $this->upload->data('file_name');
 			}
 		}
@@ -63,10 +68,11 @@ class Loker extends CI_Controller {
 		$deskripsi 			= $this->input->post('deskripsi');
 		$tgl_berakhir 		= $this->input->post('tgl_berakhir');
 		$gambar				= $_FILES['gambar'];
-		if ($gambar=''){}else {
+		if ($gambar = '') {
+		} else {
 			$config['upload_path']		= './assets/gambar';
 			$config['allowed_types']	= 'jpg|png|gif|jpeg';
-			
+
 			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('gambar')) {
 				$data = array(
@@ -80,7 +86,7 @@ class Loker extends CI_Controller {
 				$this->M_loker->edit($data);
 				$this->session->set_flashdata('pesan', 'Data Berhasil Di Edit !!!');
 				redirect('loker');
-			}else {
+			} else {
 				$gambar = $this->upload->data('file_name');
 			}
 		}
